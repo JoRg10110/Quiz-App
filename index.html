@@ -22,8 +22,30 @@
 
     <div class="container">
         <div class="card quiz_card">
-            <img src="img/school-supplies-7069763_640.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
+            <img src="img/school-supplies-7069763_640.jpg" id="header-image" class="card-img-top">
+            
+            <div class="progress">
+                <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%;">0%</div>
+              </div>
+
+            <div class="card-body" id="end-screen" style="display: none;">
+                <div class="text-center headline">
+                    Quiz Beendet!
+                </div>
+                
+    
+                <div class="text-center">
+                    Du hast <b id="amountOfRightQuestions">xxx</b> Fragen von <b id="amounOfQuestions" >xxx</b> richtig beantwortet.
+                </div>
+
+                <div class="btn-row">
+                    <button onclick="restartGame()" class="btn btn-primary">Neustarten</button>
+                </div>
+            
+            </div>
+
+            
+            <div class="card-body" id="question-body">
                 <h5 class="card-title" id="questiontext" >Frage</h5>
                 
                 <div class="card quiz-answer-card mb-2" onclick="answer('answer_1')">
@@ -52,10 +74,10 @@
 
                 <div class="question-footer">
                     <span>
-                        <b>1</b> von <b id="all-questions"></b> Fragen
+                        <b id="question-number" >1</b> von <b id="all-questions">5</b> Fragen
                     </span>
                 
-                    <button class="btn btn-primary">Nächste Frage</button>
+                    <button onclick="nextQuestion()" class="btn btn-primary" id="next-button" disabled>Nächste Frage</button>
                 </div>
             </div>
         </div> 
