@@ -113,10 +113,10 @@ function gameIsOver() {
 
 function answer(selection) {
     let question = questions[currentQuestion];
-    let selectedQuestionsNumber = selection.slice(-1);
+    let selectedQuestionNumber = selection.slice(-1);
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
-    if (rightAnswerSelected(selectedQuestionsNumber)) {
+    if (selectedQuestionNumber == question['right_answer']) {
       document.getElementById(selection).parentNode.classList.add('bg-success');
       rightQuestions++;
       AUDIO_SUCCESS.play();
@@ -129,9 +129,6 @@ function answer(selection) {
       document.getElementById('next-button').disabled = false;
 }
 
-function rightAnswerSelected(selectedQuestionsNumber){
-  return  selectedQuestionsNumber == question['right_answer'];  
-}
 
 function nextQuestion() {
   currentQuestion++;
